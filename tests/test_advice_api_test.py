@@ -12,6 +12,7 @@ def test_get_advice_random(api_client,get_advice_endpoint, get_logger):
     advice_response_model = parse_model(AdviceResponse, response.json())
     assert advice_response_model.slip.id > 0, "Slip ID must be positive"
     assert advice_response_model.slip.advice.strip(), "Advice must be non-empty"
+    get_logger.info(f"Advice returned for id {advice_response_model.slip.id}:{advice_response_model.slip.advice}")
 
 
 @pytest.mark.parametrize("slip_id", [1, 2, 3, 4, 5])
@@ -24,6 +25,7 @@ def test_get_advice_by_id(api_client,get_advice_endpoint, get_logger, slip_id):
     # validate response slip_id
     assert int(slip_id) == int(advice_response_model.slip.id), (f"Slip ID in response {advice_response_model.slip.id} should match the path "
                                                  f"parameter : {slip_id}")
+    get_logger.info(f"Advice returned for id {slip_id}:{advice_response_model.slip.advice}")
 
 
 
