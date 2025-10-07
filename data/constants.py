@@ -6,3 +6,7 @@ class EndPoints:
 
 class SlipId:
     INVALID = "999"
+
+class ErrorMessage:
+    ERROR_TYPE = "error"
+    ADVICE_SLIP_NOT_FOUND = "Advice slip not found."

@@ -60,6 +60,8 @@ def test_invalid_advice(api_client,get_advice_endpoint, get_logger):
     error_response_model = parse_model(ErrorResponse,response.json())
     error_response_type = error_response_model.message.type
     error_response_message_text = error_response_model.message.text
-    assert error_response_type == "error", "Response type must be error for invalid advice ID"
-    assert error_response_message_text == "Advice slip not found.", "Response must contain error message text"
+    assert str(error_response_type).upper().strip() == str(data.constants.ErrorMessage.ERROR_TYPE).upper().strip() ,\
+        "Response type must be error for invalid advice ID"
+    assert (str(error_response_message_text).upper().strip() == str(data.constants.ErrorMessage.ADVICE_SLIP_NOT_FOUND).
+            strip().upper()), "Response must contain error message text"
     get_logger.info(f"Received expected error for invalid id {invalid_slip_id}: {error_response_message_text}")

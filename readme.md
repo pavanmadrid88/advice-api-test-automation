@@ -55,7 +55,7 @@ utils/          → Logger ,api_client and schema validation utilities
 conftest.py     → Shared pytest fixtures
 pytest.ini      → Common test configuration with default options set
 requirements.txt
-README.md
+readme.md
 ```
 
 ---
