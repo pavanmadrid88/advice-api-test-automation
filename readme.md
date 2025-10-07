@@ -8,10 +8,12 @@ The framework validates API responses, schema correctness, and error handling.
 
 ## How to Run
 
+Ensure python is available is available in the system.
+
 ```bash
 # 1. Clone repo
-git clone https://github.com/<your-username>/sporty-api-tests.git
-cd sporty-api-tests
+git clone https://github.com/pavanmadrid88/advice-api-test-automation.git
+cd advice-api-test-automation
 
 # 2. Create virtual environment
 python -m venv venv
@@ -36,6 +38,9 @@ Logs are written to:
 - `logs/test_log.log`
 - Console output (live view)
 
+HTML Report would be generated under reports directory with the help of pytest-html plugin..
+
+
 ---
 
 ## Folder Structure
@@ -57,12 +62,12 @@ README.md
 
 ## Test Cases
 
-| Test Name                | Endpoint                  | Purpose                                           |
-|---------------------------|----------------------------|---------------------------------------------------|
-| `test_get_advice_random`  | `/advice`                 | Validate random advice response                   |
-| `test_get_advice_by_id`   | `/advice/{id}`            | Verify advice by specific ID                      |
-| `test_search_advice`      | `/advice/search/{query}`  | Ensure each advice contains the search query term |
-| `test_invalid_advice`     | `/advice/{invalid_id}`    | Validate error response in case of invalid ID     |
+| Test Name                | Endpoint                  | Purpose                                                            |
+|---------------------------|----------------------------|--------------------------------------------------------------------|
+| `test_get_advice_random`  | `/advice`                 | Validate random advice response                                    |
+| `test_get_advice_by_id`   | `/advice/{id}`            | Verify advice by specific ID (parameterised).                      |
+| `test_search_advice`      | `/advice/search/{query}`  | Ensure each advice contains the search query term (parameterised). |
+| `test_invalid_advice`     | `/advice/{invalid_id}`    | Validate error response in case of invalid ID                      |
 
 ---
 
@@ -77,4 +82,4 @@ README.md
 
 ## Test Run Demo
 
-![Test Run Demo](assets/test_run.gif)
+![Test Run Demo](assets/api_test_run.gif)

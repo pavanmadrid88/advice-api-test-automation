@@ -31,12 +31,10 @@ allure-report/
 report.html
 *.html
 
-# Screenshots, videos, logs
-assets/screenshots/
+# logs
 artifacts/
 logs/
 *.png
-*.gif
 *.mp4
 
 # ----------------------------
