@@ -8,7 +8,7 @@ The framework validates API responses, schema correctness, and error handling.
 
 ## How to Run
 
-Ensure python is available is available in the system.
+- Ensure python is available is available in the system.
 
 ```bash
 # 1. Clone repo
@@ -27,19 +27,16 @@ pip install -r requirements.txt
 pytest
 ```
 
-The framework uses a pytest.ini file to maintain common test configurations such as default options, test paths, and custom markers.
+## Notes
 
-Parallel execution: enabled via the pytest-xdist plugin using the -n option.
-
-HTML reporting: handled by the pytest-html plugin, with reports stored in the /reports folder.
-Parallel test execution is enabled with the pytest-xdist plugin.
-
-Logs are written to:
-- `logs/test_log.log`
-- Console output (live view)
-
-HTML Report would be generated under reports directory with the help of pytest-html plugin..
-
+- The framework follows a modular design, separating test logic, utilities, data, and configuration for better maintainability.
+- Base URLs, endpoints, and environment-specific values are centralized in the **data/constants.p**y file for consistency.
+- A custom **APIClient** wrapper around requests simplifies REST calls, manages sessions, and enforces standardized timeout / base URL handling across all tests.
+- Response schema validation is implemented using **Pydantic** models to ensure API responses conform to expected data structures and types.
+- The framework uses a **pytest.ini** file to maintain common test configurations such as default options, test paths, and custom markers.
+- **Parallel execution** is enabled via the **pytest-xdist** plugin using the **-n** option.
+- **Logs** are written and stored under **logs** directory.
+- **HTML reporting**: handled by the **pytest-html** plugin, with reports stored in the **/reports** folder.
 
 ---
 
@@ -61,6 +58,9 @@ readme.md
 ---
 
 ## Test Cases
+
+- Below test cases are covered as of now from **/advice** Service.
+- Reference : [Advice Slip JSON API](https://api.adviceslip.com/)
 
 | Test Name                | Endpoint                  | Purpose                                                            |
 |---------------------------|----------------------------|--------------------------------------------------------------------|
